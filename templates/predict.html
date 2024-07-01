@@ -1,0 +1,91 @@
+<!-- predictions/predict.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Prediction</title>
+    <link rel="stylesheet">
+    <style>
+        h1 {
+            text-align: center;
+
+            margin-bottom: 500px;
+            margin-right: -350px;
+            background-color: rgb(253, 207, 3);
+
+        }
+     body {
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+           
+            /* Replace 'background.jpg' with the path to your background image */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-image: url('D:\waterquality\water_quality\templates');
+            /* Adjust the path as needed */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+        }
+
+        /* Style for the form */
+        form {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            /* Drop shadow effect */
+            max-width: 400px;
+            margin: 0 auto;
+
+        }
+
+
+        input[type="number"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body bgcolor="skyblue">
+    
+    <h1 class="water">Water Quality Prediction</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Predict</button>
+    </form>
+
+</body>
+
+</html>

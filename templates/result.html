@@ -1,0 +1,66 @@
+<!-- predictions/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" >
+    <style>
+        .result {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.9); 
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+        max-width: 800px;
+        max-height: 200px;
+        margin: 20px auto;
+        color: #333;
+        margin-top: 250px;
+        
+    }
+    .result p {
+        font-size: 18px;
+        font-weight: bold;}
+     
+        .result span {
+            font-size: 24px;
+            color: #4CAF50; 
+        }    
+    h1{
+        background-color: rgb(219, 5, 239);
+        text-align: center;
+    }
+    /* Make sure no other styles override this */
+    body{background-image: url('images/waterimage.jpeg'); }
+
+    .p1{
+        background-color: rgb(13, 233, 13);
+    }
+    .p2{
+        background-color: red;
+    }
+
+
+</style> 
+</head>
+<body>
+    <img src="water.jpeg" alt="">
+    <h1>Prediction Result</h1>
+    
+<div class="result"> <!-- Add a class for styling -->
+    {% if prediction == 0 %}
+        <p class="p1">The water is drinkable.</p>
+        <p>The pH level of drinkable water typically falls within the range of 6.5 to 8.5. This range is considered safe for human consumption.</p>
+    {% elif prediction == 1 %}
+        <p class="p2">The water is not drinkable.</p>
+        <p>Water with a pH below 6.5 might be acidic, which can cause corrosion of pipes and metallic surfaces, while water with a pH above 8.5 might be alkaline and can have a soapy taste.</p>
+    {% else %}
+        <p>Invalid prediction value.</p>
+    {% endif %}
+</div>
+
+
+</body>
+</html>
